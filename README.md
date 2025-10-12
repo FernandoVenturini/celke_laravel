@@ -12,5 +12,28 @@
 	-> php artisan make:view nome
 	-> php artisan make:view users/create
 
+### GERAR A CHAVE PARA O ARQUIVO .env:
+	-> php artisan key:generate
+
 ### EXECUTAR AS MIGRATION PARA CRIAR A BASE DE DADOS E AS TABELAS:
 	-> php artisan migrate
+
+### INICIAR O PROJETO CRIADO COM LARAVEL:
+	-> php artisan serve
+
+### ACESSAR O CONTEUDO PADRAO DO LARAVEL:
+	-> http://127.0.0.1:8000
+
+### INSTALAR AS DEPENDENCIAS DO PHP:
+	-> composer install
+
+### INSTALANDO TAILWIND NO LARAVEL:
+	-> npm install tailwiindcss @tailwindcss/vite
+
+### INSTALANDO AS DEPENDENCIAS DO TAILWIND:
+	-> npm install
+
+
+
+
+
