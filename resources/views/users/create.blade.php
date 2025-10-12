@@ -1,56 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.admin')
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	@vite(['resources/css/app.css'])
-	<title>Celke</title>
-</head>
+@section('content')
+    <div class="content">
+        <div class="content-title">
+            <h1 class="page-title">Cadastrar Usuario</h1>
+            <a href="#" class="btn-primary">Listar</a>
+        </div>        
 
-<body>
+		<x-alert />
 
-	<div class="main-container">
-		<header class="header">
-			<div class="content-header">
-				<h2 class="title-logo"><a href="{{ route('dashboard') }}">Celke</a></h2>
-				<ul class="list-nav-link">
-					<li><a href="#" class="nav-link">Usuarios</a></li>
-					<li><a href="{{ route('dashboard') }}" class="nav-link">Sair</a></li>
-				</ul>
-			</div>
-		</header>
+        <form action="{{ route('user.store') }}" method="POST" class="form-container">
+            @csrf
 
-		<h1>Cadastrar Usuario</h1>
+            <div class="mb-4">
+                <label for="name" class="form-label">Nome: </label>
+                <input type="text" name="name" id="name" placeholder="Nome completo do usuario..."
+                    value="{{ old('name') }}" class="form-input" required>
+            </div>
 
-		@if (session('success'))
-		<p style="color: #086;">
-			{{ session('success') }}
-		</p>
-		@endif
+            <div class="mb-4">
+                <label for="email" class="form-label">E-mail: </label>
+                <input type="email" name="email" id="email" placeholder="Seu melhor email..."
+                    value="{{ old('email') }}" class="form-input" require>
+            </div>
 
-		@if (session('error'))
-		<p style="color: #f00;">
-			{{ session('error') }}
-		</p>
-		@endif
+            <div class="mb-4">
+                <label for="password" class="form-label">Senha: </label>
+                <input type="password" name="password" id="password" placeholder="Entre com sua senha..."
+                    value="{{ old('password') }}" class="form-input" require>
+            </div>
 
-		<form action="{{ route('user.store') }}" method="POST">
-			@csrf
-
-			<label for="name">Nome: </label>
-			<input type="text" name="name" id="name" placeholder="Nome completo do usuario..." value="{{ old('name') }}" required><br><br>
-
-			<label for="email">E-mail: </label>
-			<input type="email" name="email" id="email" placeholder="Seu melhor email..." value="{{ old('email') }}" require><br><br>
-
-			<label for="password">Senha: </label>
-			<input type="password" name="senha" id="senha" placeholder="Entre com sua senha..." value="{{ old('senha') }}" require><br><br>
-
-			<button type="submit">Cadastrar</button>
-		</form>
-	</div>
-
-</body>
-
-</html>
+            <button type="submit" class="btn-success">Cadastrar</button>
+        </form>
+    </div>
+@endsection
