@@ -33,7 +33,8 @@
 ### INSTALANDO AS DEPENDENCIAS DO TAILWIND:
 	-> npm install
 
-
-
+### CRIAR UM ARQUIVO REQUEST COM VALIDACOES DO FORMULARIO:
+	-> php artisan make:request NomeDo Request
+	-> php artisan make:request UserRequest
 
 
